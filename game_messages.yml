@@ -1,0 +1,430 @@
+rule_messages:
+  open_rules_invalid_input: |
+    Sorry, must be y or n.
+
+  display_menu: |+
+    (i) Introduction
+
+    (g) Gameplay
+
+    (c) Card Values
+
+    (s) Strategy
+
+    (r) Return to game
+
+    (Input the first letter of the item you would like to access)
+
+  rules_menu_invalid_input: |+
+
+    Sorry, didn't recognize that input, please enter the first letter of any of the
+    items on the menu (i, g, c, s, r).
+
+  introduction_messages:
+    1: |+
+      INTRODUCTION
+      ============
+
+    2: |+
+      In this variant of the classic card game "Blackjack", you will compete against
+      a computer AI that controls the dealer. The general aim of the game is to build
+      your hand to be worth more points than the dealer's, while avoiding going bust.
+
+    3: |+
+      More specifically, to win the overall game, you need to win more rounds than
+      the dealer by the time the fifty-two card deck has been fully cycled (a full
+      cycle of the deck is when the deck has been depleted and reshuffled).
+
+    4: |+
+      At this point, if either player has a lead of at least two wins,they are crowned
+      the Grand Winner.
+
+    5: |+
+      However, if neither player has amassed this lead, the game continues with the
+      reshuffled deck and a showdown ensues; rounds are played until a lead of two
+      wins is established by a player, who then becomes the Grand Winner.
+
+  gameplay_messages:
+    1: |+
+      GAMEPLAY RULES
+      ==============
+
+
+    2: |+
+      At the beginning of a round, the dealer and user are each dealt an initial hand
+      of two cards.
+
+    3: |+
+      At this point you can choose whether you would like to "hit" and receive an
+      additional card, or "stay" and receive no further cards.
+
+    4: |
+      You can also choose to "card count", which will give you access to a chart
+      displaying an account of all the cards that have been revealed from play so far.
+    
+    5: |+
+      You can use this chart to gain an idea of the way the deck weighting is skewed.
+      Checkout "Strategy" for more on how to use this information.
+
+  card_values_messages:
+    1: |+
+      CARD VALUES
+      ===========
+
+
+    2: " __________ ______ "
+    3: "|Card Type |Value |"
+    4: "|‾‾‾‾‾‾‾‾‾‾T‾‾‾‾‾‾|"
+    5: "|   King   |  10  |"
+    6: "|   Queen  |  10  |"
+    7: "|   Jack   |  10  |"
+    8: "|   Ten    |  10  |"
+    9: "|   Nine   |  9   |"
+    10: "|   Eight  |  8   |"
+    11: "|   Seven  |  7   |"
+    12: "|   Six    |  6   |"
+    13: "|   Five   |  5   |"
+    14: "|   Four   |  4   |"
+    15: "|   Three  |  3   |"
+    16: "|   Two    |  2   |"
+    17: "|   Ace    |*11/1 |"
+    18: "|          |      |"
+    19: " ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾ "
+
+    20: |+
+      * Aces are worth 11 points unless your hand value is worth more than the
+        point limit, in which case they can adapt and instead be worth 1 point.
+
+  strategy_messages:
+    1: |+
+      STRATEGY
+      ========
+
+
+    2: |+
+      Twenty-one is all about deciding whether you're chances of winning a round
+      are made better or worse by taking on the risk of drawing another card.
+
+    3: |
+      The potential benefit of drawing cards is that you can build your hand
+      for a solid score and a better chance of outmatching the dealer.
+
+    4: |
+      However, if your hand becomes worth more than the 21 point limit, you go
+      bust, and automatically lose the round.
+
+  dealer_advantage_messages:
+    1: |+
+      Dealer Advantage
+      ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+
+    2: |+
+      Twenty-One is a game whose flow inherently favours the dealer over other
+      players. This is simply because the player's turn precedes the dealer's.
+
+    3: |+
+      As a result, the dealer doesn't have to walk through the minefield of
+      adding random cards to their hand until after players have already
+      traversed that terrain.
+
+    4: |+
+      If the player goes bust, the dealer wins the round before any question of
+      risk for them is raised.
+
+  how_to_win_messages:
+    1: |+
+      How to Win
+      ‾‾‾‾‾‾‾‾‾‾
+
+    2: |+
+      Luckily, there are a number of drawbacks to the dealer's position that
+      the player can leverage in their decision making to attempt to gain an
+      edge.
+
+    3: |
+      For one thing, the player is able to view one of the dealer's two cards during
+      their turn which can give them an idea of whether the dealer is set up
+      for a strong hand or not.
+
+    4: |+
+      This can help the player gauge whether higher risk play is necessary to
+      eke out a win for the current round, or whether a lower scoring hand
+      should be sufficient.
+
+    5: |
+      Another significant drawback for the dealer is their inability to make
+      independent decisions.
+
+    6: |+
+      In Twenty-One the dealer always adheres to a strict rule; they must hit
+      for cards until their hand is worth at least 17 points, and then they
+      must stay with their current cards.
+
+    7: |+
+      Because the dealer can't make decisions for themselves, they are unable
+      to capitalize on a crucial element of the game; the deck weighting.
+
+  deck_weighting_messages:
+    1: |+
+      Deck Weighting
+      ‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+
+    2: |+
+      As rounds pass and the deck depletes, more and more cards are revealed to
+      the player.
+
+    3: |+
+      The cards that have been revealed share an inverse relationship with the
+      cards that remain in the deck.
+
+    4: |+
+      Using this knowledge, (made accessible through the card counting table)
+      the player is able to ascertain the likelihood that one or another type
+      of card will be drawn next from the top of the deck.
+
+    5: |+
+      This they can then take into consideration when deciding their next move.
+
+table_display_strings:
+  card_header: ' _____________ '
+  card_footer: '|_____________|'
+
+  hearts:
+    1: '|             |'
+    2: '|  ___   ___  |'
+    3: '| /   \ /   \ |'
+    4: '| \    v    / |'
+    5: '|  \       /  |'
+    6: '|   \     /   |'
+    7: '|    \   /    |'
+    8: '|     \ /     |'
+    9: '|      v      |'
+
+  diamonds:
+    1: '|             |'
+    2: '|      ʌ      |'
+    3: '|     / \     |'
+    4: '|    /   \    |'
+    5: '|   /     \   |'
+    6: '|   \     /   |'
+    7: '|    \   /    |'
+    8: '|     \ /     |'
+    9: '|      v      |'
+
+  clubs:
+    1: '|             |'
+    2: '|     ___     |'
+    3: '|    /   \    |'
+    4: '|   _\   /_   |'
+    5: '|  /       \  |'
+    6: '|  \__   __/  |'
+    7: '|     | |     |'
+    8: '|     |_|     |'
+    9: '|             |'
+
+  spades:
+    1: '|             |'
+    2: '|      ʌ      |'
+    3: '|     / \     |'
+    4: '|    /   \    |'
+    5: '|   /     \   |'
+    6: '|  /       \  |'
+    7: '|  \__   __/  |'
+    8: '|     | |     |'
+    9: '|     |_|     |'
+
+  unknown:
+    1: '|    _____    |'
+    2: '|   / ___ \   |'
+    3: '|  / /   \ \  |'
+    4: '|  | |   | |  |'
+    5: '|   \|  / /   |'
+    6: '|      / /    |'
+    7: '|     |_|     |'
+    8: '|      _      |'
+    9: '|     (_)     |'
+
+  card_count_header_lines:
+    1: "\n\n\n\n\n\n"
+    2: "                                 CARD COUNTER"
+    3: "\n\n"
+    4: "                          ⟓_________________________⟓"
+    5: "                          |ˍˍˍḎI̱S̱C̱A̱ṞḎE̱Ḏˍˍˍ|ṞE̱M̱A̱I̱ṈI̱ṈG̱|"
+    6: "                          |  ̳ |  ̳ |  ̳ |  ̳ |         |"
+    7: "                          |▯♠︎▯|▯♢▯|▯♣︎▯|▯♡▯|         |"
+    8: "                          |  ̿ |  ̿ |  ̿ |  ̿ |         |"
+  card_count_footer:
+       "                                           ‾‾‾‾‾‾‾‾‾"
+
+  cycled_deck_banner: ◎⦿◉◎⦿◉◎⦿◉◎⦿◉◎⦿◉◎⦿◉◎⦿◉   ..A full cycle has been reached..   ◉⦿◎◉⦿◎◉⦿◎◉⦿◎◉⦿◎◉⦿◎◉⦿
+
+TOGame_messages:
+  welcome_message: "                             Welcome to Twenty-One!\n\n"
+  goodbye_message: "                    Thanks for playing Twenty-One. Goodbye!"
+
+  grand_winner_announcer: THE GRAND WINNER IS
+
+  choice_prompt: "               Would you like to (h)it, (s)tay, or (c)ard count?"
+  choice_invalid_input: "INVALID INPUT, please enter: \n`h` for hit \n`s` for stay \n`c` for card count\n\n"
+
+  stay_message:
+    human: "                                   You stay!"
+    dealer: "                               The dealer stays!"
+
+  hit_message:
+    human: "                           You hit for another card!"
+    dealer: "                       The dealer hits for another card!"
+
+  result_message:
+    human_win: "                                You score a win!"
+    dealer_win: "                            The dealer scores a win!"
+    tie: "                                  It's a tie!"
+
+  play_again_prompt: "                      Would you like to play again? (y/n)"
+  play_again_invalid_input: "Invalid input, please enter:\n`y` for yes\n`n` for no"
+  play_again_message: "                               Let's play again!"
+
+human_messages:
+  name_prompt: "                               What's your name?"
+  name_invalid_input: "INVALID INPUT:\nPlease enter a name between 1 and 9 characters in length.\n\n"
+
+# format_messages:
+  # type_to_continue_prompt: Press enter to continue
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#  _____________
+# |             |
+# |   King of   |
+# |             |
+# |  ___   ___  |
+# | /   \ /   \ |
+# | \    ٧    / |
+# |  \       /  |
+# |   \     /   |
+# |    \   /    |
+# |     \ /     |
+# |      v      |
+# |_____________|
+
+#  _____________
+# |             |
+# |   King of   |
+# |             |
+# |      ٨      |
+# |     / \     |
+# |    /   \    |
+# |   /     \   |
+# |   \     /   |
+# |    \   /    |
+# |     \ /     |
+# |      v      |
+# |_____________|
+
+#  _____________   _____________
+# |             | |             |
+# |             | |   King of   |
+# |             | |             |
+# |      ٨      | |     ___     |
+# |     / \     | |    /   \    |
+# |    /   \    | |   _\   /_   |
+# |   /     \   | |  /       \  |
+# |  /       \  | |  \__   __/  |
+# |  \__   __/  | |     | |     |
+# |     | |     | |     | |     |
+# |     |_|     | |     |_|     |
+# |_____________| |_____________|
+#  _____________
+# |             |
+# |  Queen of   |
+# |             |
+# |     ___     |
+# |    /   \    |
+# |   _\   /_   |
+# |  /       \  |
+# |  \__   __/  |
+# |     | |     |
+# |     |_|     |
+# |_____________|
+
+#  _____________
+# |\        _   |
+# | \      / \  |
+# |  \    |   | |
+# |   \_     /  |
+# |   _ \   |   |
+# |  / \ \      |
+# | |   | \ °   |
+# |    /   \_   |
+# |   |      \  |
+# |           \ |
+# |   °        \|
+# |_____________|
+
+#  _____________   _____________
+# |             | |             |
+# |             | |   King of   |
+# |             | |             |
+# |      ٨      | |     ___     |
+# |     / \     | |    /   \    |
+# |    /   \    | |   _\   /_   |
+# |   /     \   | |  /       \  |
+# |  /       \  | |  \__   __/  |
+# |  \__   __/  | |     | |     |
+# |     | |     | |     | |     |
+# |     |_|     | |     |_|     |
+# |_____________| |_____________|
+#  _____________
+# |\        _   |
+# | \      / \  |
+# |  \    |   | |
+# |   \_     /  |
+# |   _ \   |   |
+# |  / \ \      |
+# | |   | \ °   |
+# |    /   \_   |
+# |   |      \  |
+# |           \ |
+# |   °        \|
+# |_____________|
+
+#  _____________
+# |             |
+# |             |
+# |    _____    |
+# |   / ___ \   |
+# |  / /   \ \  |
+# |  | |   | |  |
+# |   \|  / /   |
+# |      / /    |
+# |     |_|     |
+# |             |
+# |     (•)     |
